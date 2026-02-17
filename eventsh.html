@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evebts</title>
+</head>
+<body background >
+    <div class="image">
+        <ul>
+            <li><img src="https://www.pixelstalk.net/wp-content/uploads/2016/07/3840x2160-Images-Free-Download.jpg" width="100" id="A" alt=""></li>
+            <li><img src="https://images.pexels.com/photos/31256342/pexels-photo-31256342.jpeg?cs=srgb&dl=pexels-optical-chemist-340351297-31256342.jpg&fm=jpg" width="100" id="B" alt=""></li>
+            <li><img src="https://th.bing.com/th/id/OIP.Qwyh_zRoO2yFJWfR1pfDtQHaE_?w=226&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1" width="100" id="C" alt=""></li>
+            <li><img src="https://th.bing.com/th/id/OIP.B39-1EvwOFXOffOfIKZT0AHaEK?w=333&h=187&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1" width="100" id="D" alt=""></li>
+            <li><a href="https://www.google.com/">Link</a>google</li>
+        </ul>
+    </div>
+    <script>
+        document.getElementById("A").addEventListener("click", function() {
+            alert("You clicked on Image A");
+        });
+        document.getElementById("B").addEventListener("click", function() {
+            alert("You clicked on Image B");
+        });
+        document.getElementById("C").addEventListener("click", function() {
+            alert("You clicked on Image C");
+        });
+        document.getElementById("D").addEventListener("click", function() {
+            alert("You clicked on Image D");
+        });
+
+        document.getElementById('image').addEventListener('click', function(event) {
+            console.log('Event Target ID:', event.target.id);
+        });
+        document.querySelector('.image').addEventListener('click', function(event) {
+            console.log('Current Target Class:', event.currentTarget.className);
+        });
+
+    </script>
+    // type ,timestmap, defaultprevented,
+    // target, currenttarget, toelement, src
+    // clientx, clienty, pagex, pagey,screenx, screeny
+    //alter,ctrlkry, shiftkey,keycode
+
+    // event propoagation
+        // event capturing
+        // event bubbling   
+
+        // prevent default
+        document.getElementById('image').addEventListener('click', function(event) {
+            **event.preventDefault();
+            console.log('Default action prevented for', event.target.id);
+        });//
+
+
+</body>
+</html>

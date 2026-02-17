@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black ; color: white;">
+    
+    <ul>
+        <li id="item1" class="list-item">Javascript</li>
+        <li id="item2" class="list-item"> ankur</li>
+        <li id="item3" class="list-item">ajeet</li>
+     
+    </ul>
+</body>
+<script>
+ // const div =  document.createElement('h1');
+ // console.log(div);
+ // div.className = 'heading';
+   // div.id = 'headingId';
+    //div.innerText = 'This is created using javascript';
+    //div.setAttribute('title', 'This is heading');
+    //div.style.color = 'yellow';
+    //div.style.textAlign = 'center'; 
+    // document.body.appendChild(div);
+       function addlanguage(langname){
+        const ul = document.querySelector('ul');
+        const li = document.createElement('li');
+        li.className = 'list-item';
+        li.id = 'item4';
+        li.innerText = langname;
+        ul.appendChild(li);
+       }
+       addlanguage("python");
+       addlanguage("java");
+
+       function addoptlanguage(langname){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langname));
+        dcument.querySelector('ul').appendChild(li);
+       }
+         addoptlanguage("c++");
+        addoptlanguage("ruby");
+            
+
+
+       
+</script>
+</html>

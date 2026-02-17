@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: gray;
+    }   
+</style>
+<body background-color="gray">
+    <h1>Hello World</h1>
+    <button id="myButton">Click Me</button>
+    <script>
+        document.getElementById('myButton').addEventListener('click', function() {
+            alert('Button was clicked!');
+        });
+        setTimeout(function() {
+            console.log('This message is shown after 2 seconds');
+        }, 2000);
+
+        setTimeout(function() {
+            alert('This alert appears after 3 seconds');
+        }, 3000);
+       const changeText = function(){ document.querySelector('h1').innerHTML = 'Hello JavaScript!';} 
+       setTimeout(changeText,2000);
+       document.querySelector('#myButton').addEventListener('click', function(){
+        clearTimeout(changeText);
+        console.log('Text change cancelled');
+        
+       });
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project1</title>
+    <style>
+         nav{
+           
+            display: inline;
+          
+        }
+        .home, .about, .contact{
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
+            margin: 10px;
+        }
+        .nav{
+            height: 60px;
+            width: 100%;
+            background-color: rgb(86, 80, 80);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        button{
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+        }
+        .btn{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid black;
+            line-height: 100px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+        #lightblue{
+            background-color: rgb(85, 16, 223);
+        }
+        #lightgreen{
+            background-color: lightgreen;
+        }   
+        #lightyellow{
+            background-color: lightyellow;
+        }   
+        #lightpink{
+            background-color: lightpink;
+        }  
+        H1, h2, p{
+            text-align: center;
+            color: black;
+        } 
+    </style>
+</head>
+<body >
+    <div class="nav">
+    <Nav>
+        <a class="home" href="index.html">Home</a> |
+        <a class="about" href="about.html">About</a> |
+        <a class="contact" href="contact.html">Contact</a>
+    </Nav>
+    </div>
+    <main>
+        <h1>Welcome to Project 1</h1>
+        <p>This is the main content of Project 1 page.</p>
+        <p>Body color change switcher</p>
+        <div class="box">
+            <button onclick="document.body.style.backgroundColor='lightblue'">Light Blue</button>
+            <button onclick="document.body.style.backgroundColor='lightgreen'">Light Green</button>
+            <button onclick="document.body.style.backgroundColor='lightyellow'">Light Yellow</button>
+        </div>
+        <div >
+            <span class="btn" id="lightblue"></span>
+             <span class="btn" id="lightgreen"></span>
+              <span class="btn" id="lightyellow"></span>
+               <span class="btn" id="lightpink"></span>
+        </div>
+    </main>
+    <script src="pracjava.js"></script>
+</body>
+</html>
