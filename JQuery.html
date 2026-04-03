@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <style>
+    .error { color: red; font-size: 14px; }
+    input { display: block; margin: 10px 0; padding: 8px; }
+    form input {
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+    <!-- <p id="text">Hello World</p>
+    <button id="btn">Click Me</button> -->
+
+    <!-- <input type="text" id="name" placeholder="Enter name">
+    <button id="btn">Show</button>
+    <p id="result"></p> -->
+
+    <h2>Register</h2>
+
+<form id="myForm">
+<label for="name">Name:</label>
+  <input type="text" id="name" placeholder="Enter Name">
+  <span class="error" id="nameError"></span>
+
+<label for="email">Email:</label>
+  <input type="email" id="email" placeholder="Enter Email">
+  <span class="error" id="emailError"></span>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" placeholder="Enter Password">
+  <span class="error" id="passError"></span>
+
+  <label for="confirmPassword">Confirm Password:</label>
+
+  <input type="password" id="confirmPassword" placeholder="Confirm Password">
+  <span class="error" id="confirmError"></span>
+
+  <button type="submit">Register</button>
+
+</form>
+</body>
+
+</html>
+<script>
+   $(function(){
+
+  $("#myForm").submit(function(e){
+
+    e.preventDefault(); // stop form submit
+
+    let isValid = true;
+
+    // clear old errors
+    $(".error").text("");
+
+    // get values
+    let name = $("#name").val().trim();
+    let email = $("#email").val().trim();
+    let password = $("#password").val().trim();
+    let confirmPassword = $("#confirmPassword").val().trim();
+
+    // NAME VALIDATION
+    if(name === ""){
+      $("#nameError").text("Name is required");
+      isValid = false;
+    }
+
+    // EMAIL VALIDATION
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if(email === ""){
+      $("#emailError").text("Email is required");
+      isValid = false;
+    }
+    else if(!email.match(emailPattern)){
+      $("#emailError").text("Invalid email format");
+      isValid = false;
+    }
+
+    // PASSWORD VALIDATION
+    if(password.length < 6){
+      $("#passError").text("Password must be at least 6 characters");
+      isValid = false;
+    }
+
+    // CONFIRM PASSWORD
+    if(confirmPassword !== password){
+      $("#confirmError").text("Passwords do not match");
+      isValid = false;
+    }
+
+    // FINAL SUBMIT
+    if(isValid){
+      alert("Form Submitted Successfully!");
+
+      // 👉 here you can call API
+      // example:
+      /*
+      $.ajax({
+        url: "/api/register",
+        method: "POST",
+        data: { name, email, password },
+        success: function(res){
+          alert("Saved in database");
+        }
+      });
+      */
+    }
+
+  });
+
+});
+    // $(document).ready(function () {
+    //     $("#btn").click(function () {
+    //         // $("#text").text("Button Clicked!");
+    //         // $("#text").hide();
+    //         alert("Clicked!");
+    //     });
+    // });
+
+    // $("#btn").click(function () {
+    //     let name = $("#name").val();
+    //     $("#result").text("Hello " + name);
+    // });
+</script>
